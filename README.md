@@ -7,14 +7,7 @@ The learning path is followed by freeCodeCamp [Redux Tutorial - Beginner to Adva
 ## Completed Topic
 - [x] Counter App with react-redux
 - [x] Using Redux Toolkit
-- [ ] Shopping Cart Project
-- [ ] Using Firebase with Redux
-- [ ] Sending asynchronous HTTP Requests with Redux
-- [ ] Adding Notifications with Material UI
-- [ ] Adding Notification slice state
-- [ ] Using Redux Thunk Pattern
-- [ ] Creating Thuk Pattern with redux
-- [ ] Sending GET HTTP request with Redux
+- [x] Shopping Cart Project
 
 ## Use `react-redux`
 Before use `react-redux`, make sure that both `redux` and `react-redux` are installed locally.
