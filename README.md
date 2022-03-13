@@ -6,10 +6,8 @@ The learning path is followed by freeCodeCamp [Redux Tutorial - Beginner to Adva
 
 ## Completed Topic
 - [x] Counter App with react-redux
-- [ ] Using Redux Toolkit
+- [x] Using Redux Toolkit
 - [ ] Shopping Cart Project
-- [ ] Incrementing and Decrementing Items From Cart
-- [ ] Adding Logout State
 - [ ] Using Firebase with Redux
 - [ ] Sending asynchronous HTTP Requests with Redux
 - [ ] Adding Notifications with Material UI
@@ -37,22 +35,84 @@ ReactDOM.render(
 );
 ```
 
-Create a store file, in this repo, the store object is store under `./src/store/index.js`.
+or use provider separately for given required components, e.g.:
 
 ```javascript
-# each reducer store will follow this basic structure
-import  { createStore } from 'redux';
+function App() {
+  return (
+    <div className="App">
+      <Provider store={react_redux_store}>
+        <ReactReducerCounter />
+      </Provider>
 
-/**
-* The reducer function is stored as an arrow function
-* @param state: contain all state values
-* @param action: {type: Stirng, payload: any} the function act differently based on action type
-*/
-const reducer = (state = {target: value}, action) => {
-  return;
-} 
+      <hr />
 
-const store = createStore(reducerFn);
+      <Provider store={redux_toolkit_store}>
+        <ReduxReducerCounter />
+      </Provider>
 
-export default store;
+      <hr />
+    </div>
+  );
+}
+```
+
+To create a store file, in this repo, the store object is store under `./src/store/`. Make sure export the store object as default.
+```javascript
+// ----------- use react-redux ----------- 
+import { createStore } from "redux";
+
+const reducerFn = (state = { counter: 0 }, action) => {
+  if (action.type === "INC") {
+    return { counter: state.counter + 1 };
+  }
+
+  if (action.type === "DEC") {
+    return { counter: state.counter - 1 };
+  }
+
+  if (action.type === "ADD") {
+    return { counter: state.counter + action.payload };
+  }
+
+  return state;
+};
+
+const react_redux_store = createStore(reducerFn);
+
+export default react_redux_store;
+
+// ----------- use redux/toolkit ----------- 
+import { useSelector, useDispatch } from "react-redux";
+
+function ReactReducerCounter() {
+  const dispatch = useDispatch();
+
+  const react_redux_counter = useSelector((state) => state.counter);
+
+  const react_redux_increment = () => {
+    dispatch({ type: "INC" });
+  };
+
+  const react_redux_decrement = () => {
+    dispatch({ type: "DEC" });
+  };
+
+  const react_redux_addBy = () => {
+    dispatch({ type: "ADD", payload: 10 });
+  };
+
+  return (
+    <div className="react-reducer">
+      <h1>Counter use react-redux</h1>
+      <h2>{react_redux_counter}</h2>
+
+      <button onClick={react_redux_increment}>Increment</button>
+      <button onClick={react_redux_decrement}>Decrement</button>
+      <button onClick={react_redux_addBy}>Add Value by 10</button>
+    </div>
+  );
+}
+
+export default ReactReducerCounter;
 ```
