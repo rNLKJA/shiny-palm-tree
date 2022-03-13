@@ -2,7 +2,7 @@
 import { createStore } from "redux";
 
 /**
- * The reducer funciton is stored as an arrow function
+ * The reducer function is stored as an arrow function
  * @param state
  * @param action
  */
