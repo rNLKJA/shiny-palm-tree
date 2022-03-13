@@ -6,10 +6,8 @@ The learning path is followed by freeCodeCamp [Redux Tutorial - Beginner to Adva
 
 ## Completed Topic
 - [x] Counter App with react-redux
-- [ ] Using Redux Toolkit
+- [x] Using Redux Toolkit
 - [ ] Shopping Cart Project
-- [ ] Incrementing and Decrementing Items From Cart
-- [ ] Adding Logout State
 - [ ] Using Firebase with Redux
 - [ ] Sending asynchronous HTTP Requests with Redux
 - [ ] Adding Notifications with Material UI
