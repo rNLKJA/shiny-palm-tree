@@ -4,14 +4,17 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import store from "./store/index";
+import react_redux_store from "./store/react-redux-store";
+import redux_toolkit_store from "./store/redux-toolkit-store";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>,
+  // make sure store value is correct
+  // <Provider store={react_redux_store}>
+  // <Provider store={redux_toolkit_store}>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  // </Provider>
   document.getElementById("root"),
 );
 

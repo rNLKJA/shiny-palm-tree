@@ -1,30 +1,25 @@
-import { useSelector, useDispatch } from "react-redux";
 import "./App.css";
 
+import ReactReducerCounter from "./components/ReactReducerCounter";
+import ReduxReducerCounter from "./components/ReduxToolkitCounter";
+import react_redux_store from "./store/react-redux-store";
+import redux_toolkit_store from "./store/redux-toolkit-store";
+import { Provider } from "react-redux";
+
 function App() {
-  const counter = useSelector((state) => state.counter);
-  const dispatch = useDispatch();
-
-  const increment = () => {
-    dispatch({ type: "INC" });
-  };
-
-  const decrement = () => {
-    dispatch({ type: "DEC" });
-  };
-
-  const addBy = () => {
-    dispatch({ type: "ADD", payload: 10 });
-  };
-
   return (
     <div className="App">
-      <h1>Counter</h1>
-      <h2>{counter}</h2>
+      <Provider store={react_redux_store}>
+        <ReactReducerCounter />
+      </Provider>
 
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={addBy}>Add Value by 10</button>
+      <hr />
+
+      <Provider store={redux_toolkit_store}>
+        <ReduxReducerCounter />
+      </Provider>
+
+      <hr />
     </div>
   );
 }

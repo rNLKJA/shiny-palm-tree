@@ -25,6 +25,6 @@ const reducerFn = (state = { counter: 0 }, action) => {
   return state;
 };
 
-const store = createStore(reducerFn);
+const react_redux_store = createStore(reducerFn);
 
-export default store;
+export default react_redux_store;
