@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const Layout = () => {
   const showCart = useSelector((state) => state.cart.showCart);
-  let total = 100;
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
 
   return (
     <React.Fragment>
@@ -17,7 +17,7 @@ const Layout = () => {
         <div className="total-price">
           <h3>
             Total: {"$"}
-            {total}
+            {totalPrice}
           </h3>
           <button className="orderBtn">Place Order</button>
         </div>{" "}
