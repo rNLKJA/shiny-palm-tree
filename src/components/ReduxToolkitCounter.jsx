@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../store/redux-toolkit-store";
+import { Button } from "@material-ui/core";
 
 function ReactReducerCounter() {
   /* --------------------------- @reduxjs/toolkit------------------------------------- */
@@ -21,12 +22,33 @@ function ReactReducerCounter() {
 
   return (
     <div className="@reduxjs/toolkit">
-      <h1>Counter use @redux/toolkit</h1>
-      <h2>{redux_toolkit_counter}</h2>
+      <h1 style={{ color: "black" }}>Counter use @redux/toolkit</h1>
+      <h2 style={{ fontSize: 40 }}>{redux_toolkit_counter}</h2>
 
-      <button onClick={redux_toolkit_increment}>Increment</button>
-      <button onClick={redux_toolkit_decrement}>Decrement</button>
-      <button onClick={redux_toolkit_addBy}>Add Value by 10</button>
+      <Button
+        color="primary"
+        variant="outlined"
+        style={{ width: 200 }}
+        onClick={redux_toolkit_increment}
+      >
+        Increment
+      </Button>
+      <Button
+        color="primary"
+        variant="outlined"
+        style={{ width: 200 }}
+        onClick={redux_toolkit_decrement}
+      >
+        Decrement
+      </Button>
+      <Button
+        color="primary"
+        variant="outlined"
+        style={{ width: 200 }}
+        onClick={redux_toolkit_addBy}
+      >
+        Add Value by 10
+      </Button>
     </div>
   );
 }

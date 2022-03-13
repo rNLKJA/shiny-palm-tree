@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { Button } from "@material-ui/core";
 
 function ReactReducerCounter() {
   /* ---------------------------   react-redux   ------------------------------------- */
@@ -20,12 +21,36 @@ function ReactReducerCounter() {
 
   return (
     <div className="react-reducer">
-      <h1>Counter use react-redux</h1>
-      <h2>{react_redux_counter}</h2>
+      <h1 style={{ color: "black" }}>Counter use react-redux</h1>
+      <h2 style={{ fontSize: 40 }}>{react_redux_counter}</h2>
 
-      <button onClick={react_redux_increment}>Increment</button>
-      <button onClick={react_redux_decrement}>Decrement</button>
-      <button onClick={react_redux_addBy}>Add Value by 10</button>
+      <div>
+        <Button
+          color="primary"
+          variant="outlined"
+          style={{ width: 200 }}
+          onClick={react_redux_increment}
+        >
+          Increment
+        </Button>
+
+        <Button
+          color="primary"
+          variant="outlined"
+          style={{ width: 200 }}
+          onClick={react_redux_decrement}
+        >
+          Decrement
+        </Button>
+        <Button
+          color="primary"
+          variant="outlined"
+          style={{ width: 200 }}
+          onClick={react_redux_addBy}
+        >
+          Add Value by 10
+        </Button>
+      </div>
     </div>
   );
 }

@@ -3,9 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Provider } from "react-redux";
-import react_redux_store from "./store/react-redux-store";
-import redux_toolkit_store from "./store/redux-toolkit-store";
 
 ReactDOM.render(
   // make sure store value is correct
