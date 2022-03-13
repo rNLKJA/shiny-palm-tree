@@ -2,11 +2,12 @@ import "./App.css";
 
 import ReactReducerCounter from "./components/ReactReducerCounter";
 import ReduxReducerCounter from "./components/ReduxToolkitCounter";
-import Auth from "./ShoppingApp/Auth";
 
 import react_redux_store from "./store/react-redux-store";
 import redux_toolkit_store from "./store/redux-toolkit-store";
+import shopping_app_store from "./store/ShoppingApp/shopping-store";
 import { Provider } from "react-redux";
+import ShoppingApp from "./components/ShoppingApp";
 
 function App() {
   return (
@@ -23,9 +24,9 @@ function App() {
 
       <hr />
 
-      {/* <Provider>
-        <Auth></Auth>
-      </Provider> */}
+      <Provider store={shopping_app_store}>
+        <ShoppingApp />
+      </Provider>
     </div>
   );
 }
